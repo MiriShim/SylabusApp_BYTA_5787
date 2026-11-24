@@ -179,7 +179,10 @@ internal class Program
         {
             using SylabusContext ctx = new();
 
-            List<Unit> l = ctx.Units.Include(s=>s.Subject ).Where(u=>u.SubjectId==subjecttId ).ToList ( );
+            List<Unit> l = ctx.Units
+                .Include(s=>s.Subject )
+                .Where(u=>u.SubjectId==subjecttId )
+                .ToList ( );
 
             return l;   
             
